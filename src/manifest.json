@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Youtube Motivator",
+  "version": "1.0",
+  "description": "This extension will motivate you to get back to coding",
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["jquery.js", "content.js"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}
