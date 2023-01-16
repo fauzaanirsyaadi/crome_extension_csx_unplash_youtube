@@ -1,13 +1,15 @@
 {
-  "manifest_version": 2,
-  "name": "Youtube Motivator",
+  "manifest_version": 3,
+  "name": "Focus",
   "version": "1.0",
-  "description": "This extension will motivate you to get back to coding",
+  "description": "A little help to stay focused on your dreams.",
   "content_scripts": [
     {
-      "matches": ["*://*.youtube.com/*"],
-      "js": ["jquery.js", "content.js"]
+      "matches": ["*://*.youtube.com/*", "*://*.facebook.com/*"],
+      "js": ["content.js", "jquery.min.js"],
+      "css": ["styles.css"]
     }
   ],
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab", "tabs", "https://source.unsplash.com/*"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
